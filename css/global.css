@@ -1,0 +1,461 @@
+/*
+Theme Name: karesansui surrounding
+Theme URI: http://kare-san-sui.com
+Author: hysdesign
+Author URI: http://hysdesign.com/
+Description: This theme is made for karesansui surrounding site.
+Version: 0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: black
+Text Domain: karesansui theme
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+@charset "utf-8";
+
+/*------------------------------------------------
+   Reset
+------------------------------------------------*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+margin:0;
+padding:0;
+border:0;
+outline:0;
+font-size:100%;
+vertical-align:baseline;
+background:transparent;
+}
+
+body {
+line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+display:block;
+}
+
+nav ul {
+list-style:none;
+}
+
+blockquote, q {
+quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+content:'';
+content:none;
+}
+
+a {
+margin:0;
+padding:0;
+font-size:100%;
+vertical-align:baseline;
+background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+background-color:#ff9;
+color:#000;
+text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+background-color:#ff9;
+color:#000;
+font-style:italic;
+font-weight:bold;
+}
+
+del {
+text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+border-bottom:1px dotted;
+cursor:help;
+}
+
+table {
+border-collapse:collapse;
+border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+display:block;
+height:1px;
+border:0;
+border-top:1px solid #cccccc;
+margin:1em 0;
+padding:0;
+}
+
+input, select {
+vertical-align:middle;
+}
+
+::selection{
+color:#333;
+background:#fff;
+}
+
+::-moz-selection{
+color:#333;
+background:#fff;
+}
+
+a:link{
+color:#fff;
+text-decoration: none;
+}
+
+a:visited{
+color:#eee;
+}
+
+a:hover{
+color:#fff;
+text-decoration: underline;
+}
+
+a:active{
+color:#fff;
+}
+
+
+
+/*------------------------------------------------
+   Layout
+------------------------------------------------*/
+html{
+width:100%;
+height:100%;
+}
+
+body{
+position:relative;
+width:100%;
+min-width:1100px;
+min-height:600px;
+height:100%;
+font-size:12px;
+font-weight:300px;
+color:#fff;
+line-height:1;
+font-family:'Roboto', sans-serif;
+font-weight: 300;
+background:#000;
+}
+
+#unSupport{
+  padding: 20px;
+  line-height: 1.6;
+}
+
+/* canvas */
+#wrap{
+position:fixed;
+width:100%;
+height:100%;
+left:0;
+top:0;
+}
+
+#loader{
+position:absolute;
+left: 50%;
+top: 50%;
+width: 100px;
+margin: -6px 0 0 -50px;
+text-align: center;
+z-index: 1;
+}
+
+#canvas{
+}
+
+#header{
+position:absolute;
+left:10px;
+top:10px;
+line-height:1.6;
+z-index:1;
+}
+
+#header dl{
+position:absolute;
+left:0;
+top:0;
+}
+
+#header dl dt{
+display:inline;
+}
+
+#header dl dd{
+display:inline;
+}
+
+#header dl dd a{
+}
+
+#header dl dd a.on{
+color:#fff;
+background:#000;
+}
+
+#header #camera{
+left:100px;
+}
+
+#header .fullscreen{
+left:200px;
+}
+
+#footer{
+position:absolute;
+left:0;
+bottom:10px;
+width:100%;
+z-index:2;
+}
+
+#footer .copy{
+position:absolute;
+right:10px;
+bottom:0;
+}
+
+#footer .sound{
+position:absolute;
+left:10px;
+bottom:0;
+}
+
+
+@-webkit-keyframes pulse {
+ from {
+   opacity: 1.0;
+ }
+ to {
+   opacity: 0.7;
+ }
+}
+
+@keyframes pulse {
+ from {
+   opacity: 1.0;
+ }
+ to {
+   opacity: 0.7;
+ }
+}
+
+.blink{
+  /* 実行する名前 */
+-webkit-animation-name: pulse;
+animation-name: pulse;
+/* 0.3秒かけて実行 */
+-webkit-animation-duration: 0.1s;
+animation-duration: 0.1s;
+/* 何回実行するか。infiniteで無限 */
+-webkit-animation-iteration-count:infinite;
+animation-iteration-count:infinite;
+/* イーズインアウト */
+-webkit-animation-timing-function:ease-in-out;
+animation-timing-function:ease-in-out;
+/* alternateにするとアニメーションが反復 */
+-webkit-animation-direction: alternate;
+animation-direction: alternate;
+/* 実行までの待ち時間 */
+-webkit-animation-delay: 0s;
+animation-delay: 0s;
+}
+
+/*------------------------------------------------
+   Default
+------------------------------------------------*/
+
+/* float */
+.cf:after{
+content:".";
+display:block;
+height:0;
+clear:both;
+visibility:hidden;
+}
+.cf{
+display:inline-block;
+}
+/* Hides from IE-mac \*/
+*html .cf{
+height:1%;
+}
+.cf{
+display:block;
+}
+/* End hide from IE-mac */
+
+.fleft{float:left;}
+.fright{float:right;}
+
+/* text */
+.lh01{line-height:1;}
+.lh02{line-height:1.1;}
+.lh03{line-height:1.2;}
+.lh04{line-height:1.3;}
+.lh05{line-height:1.4;}
+.lh06{line-height:1.5;}
+.lh07{line-height:1.6;}
+.lh08{line-height:1.7;}
+.lh09{line-height:1.8;}
+.lh10{line-height:1.9;}
+.lh11{line-height:2;}
+
+.ttl01{font-size:14px;font-weight:bold;}
+.ttl02{font-size:16px;font-weight:bold;}
+
+.blt{font-weight:bold;}
+.nlt{font-weight:normal;}
+
+.mint{font-size:10px;}
+.bigt{font-size:14px;}
+
+.alignl{text-align:left;}
+.alignc{text-align:center;}
+.alignr{text-align:right;}
+
+.valignt{vertical-align:top;}
+.valignm{vertical-align:middle;}
+.valignb{vertical-align:bottom;}
+
+.black01{color:#000000;}
+.glay01{color:#333333;}
+.glay02{color:#666666;}
+.glay03{color:#999999;}
+.blue01{color:#003366;}
+.blue02{color:#006699;}
+.blue03{color:#0099cc;}
+.red01{color:#cc0000;}
+.red02{color:#990000;}
+.red03{color:#CC3300;}
+.orange01{color:#FF9900;}
+.orange02{color:#FF6600;}
+.green01{color:#339900;}
+.green02{color:#006600;}
+
+/* margin */
+.mat01{margin-top:5px;}
+.mat02{margin-top:10px;}
+.mat03{margin-top:15px;}
+.mat04{margin-top:20px;}
+.mat05{margin-top:25px;}
+.mat06{margin-top:30px;}
+.mat07{margin-top:35px;}
+.mat08{margin-top:40px;}
+.mat09{margin-top:45px;}
+.mat10{margin-top:50px;}
+
+.mar01{margin-right:5px;}
+.mar02{margin-right:10px;}
+.mar03{margin-right:15px;}
+.mar04{margin-right:20px;}
+.mar05{margin-right:25px;}
+.mar06{margin-right:30px;}
+.mar07{margin-right:35px;}
+.mar08{margin-right:40px;}
+.mar09{margin-right:45px;}
+.mar10{margin-right:50px;}
+
+.mab01{margin-bottom:5px;}
+.mab02{margin-bottom:10px;}
+.mab03{margin-bottom:15px;}
+.mab04{margin-bottom:20px;}
+.mab05{margin-bottom:25px;}
+.mab06{margin-bottom:30px;}
+.mab07{margin-bottom:35px;}
+.mab08{margin-bottom:40px;}
+.mab09{margin-bottom:45px;}
+.mab10{margin-bottom:50px;}
+
+.mal01{margin-left:5px;}
+.mal02{margin-left:10px;}
+.mal03{margin-left:15px;}
+.mal04{margin-left:20px;}
+.mal05{margin-left:25px;}
+.mal06{margin-left:30px;}
+.mal07{margin-left:35px;}
+.mal08{margin-left:40px;}
+.mal09{margin-left:45px;}
+.mal10{margin-left:50px;}
+
+
+/* padding */
+.pat01{padding-top:5px;}
+.pat02{padding-top:10px;}
+.pat03{padding-top:15px;}
+.pat04{padding-top:20px;}
+.pat05{padding-top:25px;}
+.pat06{padding-top:30px;}
+.pat07{padding-top:35px;}
+.pat08{padding-top:40px;}
+.pat09{padding-top:45px;}
+.pat10{padding-top:50px;}
+
+.par01{padding-right:5px;}
+.par02{padding-right:10px;}
+.par03{padding-right:15px;}
+.par04{padding-right:20px;}
+.par05{padding-right:25px;}
+.par06{padding-right:30px;}
+.par07{padding-right:35px;}
+.par08{padding-right:40px;}
+.par09{padding-right:45px;}
+.par10{padding-right:50px;}
+
+.pab01{padding-bottom:5px;}
+.pab02{padding-bottom:10px;}
+.pab03{padding-bottom:15px;}
+.pab04{padding-bottom:20px;}
+.pab05{padding-bottom:25px;}
+.pab06{padding-bottom:30px;}
+.pab07{padding-bottom:35px;}
+.pab08{padding-bottom:40px;}
+.pab09{padding-bottom:45px;}
+.pab10{padding-bottom:50px;}
+
+.pal01{padding-left:5px;}
+.pal02{padding-left:10px;}
+.pal03{padding-left:15px;}
+.pal04{padding-left:20px;}
+.pal05{padding-left:25px;}
+.pal06{padding-left:30px;}
+.pal07{padding-left:35px;}
+.pal08{padding-left:40px;}
+.pal09{padding-left:45px;}
+.pal10{padding-left:50px;}
+
+.paa01{padding:5px;}
+.paa02{padding:10px;}
+.paa03{padding:15px;}
+.paa04{padding:20px;}
